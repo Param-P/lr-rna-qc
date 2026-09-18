@@ -1,0 +1,29 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info/
+*.egg-info
+*.pyd
+*.so
+*.dylib
+
+# Environments & Testing
+.venv/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Output artifacts
+*.png
+*.svg
+*.json
+!skills-lock.json
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

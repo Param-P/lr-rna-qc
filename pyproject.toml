@@ -1,0 +1,33 @@
+[project]
+name = "lr-rna-qc"
+version = "0.1.0"
+description = "Production-grade hybrid C++/Python CLI tool for Oxford Nanopore RNA-seq quality control and alternative splicing analysis"
+readme = "README.md"
+authors = [
+    { name = "Param Patel", email = "73487856+Param-P@users.noreply.github.com" }
+]
+requires-python = ">=3.10"
+dependencies = [
+    "click>=8.5.0",
+    "matplotlib>=3.10.0",
+    "numpy>=2.0.0",
+    "pybind11>=2.12.0",
+    "scipy>=1.14.0",
+    "seaborn>=0.13.2",
+]
+
+[project.scripts]
+lr-rna-qc = "lr_rna_qc.cli:main"
+
+[build-system]
+requires = ["setuptools>=61", "pybind11>=2.12.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]

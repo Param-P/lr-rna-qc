@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "atomic-commits": {
+      "source": "nullswan/atomic-commits",
+      "sourceType": "github",
+      "skillPath": "atomic-commits/SKILL.md",
+      "computedHash": "9db6ae6888a4815966a65c6e0bd53c20e944b6e572bceb1187ecfca4a5095421"
+    }
+  }
+}
