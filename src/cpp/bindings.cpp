@@ -10,6 +10,7 @@ PYBIND11_MODULE(_fast_qc, m) {
     py::class_<lr_rna_qc::ReadQC>(m, "ReadQC")
         .def_readonly("mean_q", &lr_rna_qc::ReadQC::mean_q)
         .def_readonly("length", &lr_rna_qc::ReadQC::length)
+        .def("__eq__", &lr_rna_qc::ReadQC::operator==)
         .def("__repr__", [](const lr_rna_qc::ReadQC& qc) {
             return "<ReadQC length=" + std::to_string(qc.length) +
                    " mean_q=" + std::to_string(qc.mean_q) + ">";

@@ -1,21 +1,25 @@
 #pragma once
 
+#include <cstddef>
 #include <string>
 #include <string_view>
 #include <vector>
-#include <cstddef>
 
 namespace lr_rna_qc {
 
 struct ReadQC {
-    double mean_q;
-    size_t length;
+    double mean_q{0.0};
+    size_t length{0};
+
+    bool operator==(const ReadQC& other) const {
+        return length == other.length && (mean_q == other.mean_q);
+    }
 };
 
-// Evaluates a single Phred quality string using exact error probability LUT
+// Computes exact mean Phred quality score and length from ASCII-33 quality string
 ReadQC process_quality_string(std::string_view qual);
 
-// Evaluates a batch of sequences and quality strings
+// Batch processes a chunk of FASTQ records
 std::vector<ReadQC> process_fastq_chunk(
     const std::vector<std::string>& headers,
     const std::vector<std::string>& seqs,
