@@ -1,11 +1,10 @@
 #include "fast_qc.hpp"
 #include <cmath>
 #include <array>
-#include <algorithm>
 
 namespace lr_rna_qc {
 
-// Precalculated Look-Up Table (LUT) mapping ASCII-33 Phred characters to error probabilities
+// Precalculated error probabilities for ASCII-33 Phred scores
 // P = 10^(-Q / 10), where Q = ASCII - 33
 static const std::array<float, 256> ASCII_TO_PROB = []() {
     std::array<float, 256> table{};
@@ -14,7 +13,7 @@ static const std::array<float, 256> ASCII_TO_PROB = []() {
             double q = static_cast<double>(i - 33);
             table[i] = static_cast<float>(std::pow(10.0, -q / 10.0));
         } else {
-            table[i] = 1.0f; // Maximum error probability for invalid / unassigned
+            table[i] = 1.0f;
         }
     }
     return table;

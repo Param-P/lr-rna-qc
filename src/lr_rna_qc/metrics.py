@@ -1,7 +1,7 @@
 """Transcriptome-specific QC metrics: N50, base yields, and summary dataclasses."""
 
 from dataclasses import dataclass
-from typing import List, Sequence
+from typing import Sequence
 
 
 @dataclass
@@ -19,7 +19,7 @@ class RunSummary:
 
 
 def calculate_n50(lengths: Sequence[int]) -> int:
-    """Calculate the N50 metric (length-weighted median).
+    """Calculate the N50 metric.
 
     N50 is the read length L such that sum of reads with length >= L
     accounts for at least 50% of the total sequenced bases.

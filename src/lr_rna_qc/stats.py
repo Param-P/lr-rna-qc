@@ -1,7 +1,4 @@
-"""Statistical testing and correlation analysis for Nanopore RNA-seq quality control."""
-
 from typing import Dict, Sequence, Any
-import numpy as np
 from scipy import stats
 
 

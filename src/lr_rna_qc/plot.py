@@ -1,5 +1,3 @@
-"""Publication-ready multi-panel visualization generator for Nanopore RNA QC."""
-
 from typing import Sequence
 from pathlib import Path
 import matplotlib.pyplot as plt

@@ -1,5 +1,3 @@
-"""Command-line interface entry point for lr-rna-qc."""
-
 import click
 
 @click.group()

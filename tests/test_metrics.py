@@ -1,7 +1,6 @@
 """Unit tests for transcriptome QC metrics (N50, Phred probabilities)."""
 
 import math
-import pytest
 from lr_rna_qc.metrics import calculate_n50
 from lr_rna_qc.fallback import process_quality_string
 
@@ -30,8 +29,7 @@ def test_phred_exact_vs_arithmetic():
     True mean error probability = (0.1 + 0.001) / 2 = 0.0505
     True mean Q = -10 * log10(0.0505) ~= 12.967
     """
-    # ASCII 33 + 10 = 43 ('+'), ASCII 33 + 30 = 63 ('?')
-    qual = "+?"
+    qual = "+?" # ASCII 33 + 10 = 43 ('+'), ASCII 33 + 30 = 63 ('?')
     qc = process_quality_string(qual)
 
     naive_mean = 20.0

@@ -1,7 +1,5 @@
-"""Core bridge loading C++ fast QC engine with transparent Python fallback."""
-
 import logging
-from typing import Tuple, Any
+from typing import Any
 
 logger = logging.getLogger(__name__)
 
