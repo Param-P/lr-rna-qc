@@ -16,11 +16,14 @@ wheels/
 .coverage
 htmlcov/
 
-# Output artifacts
+# Output artifacts & sample data
 *.png
 *.svg
 *.json
 !skills-lock.json
+data/
+*.fastq
+*.fastq.gz
 
 # IDE & OS
 .vscode/
